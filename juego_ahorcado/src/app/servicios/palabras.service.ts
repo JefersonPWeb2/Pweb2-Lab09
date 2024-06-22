@@ -39,7 +39,19 @@ export class PalabrasService {
   }
 
   adivinar(letra: string) {
+    let acierto = false;
+    for (let i = 0; i < this.palabraActual.length; i++) {
+      if (this.palabraActual[i] === letra) {
+        this.palabraOculta[i] = letra;
+        acierto = true;
+      }
+    }
+    if (!acierto) {
+      this.intentos--;
+      this.intentosCambio.next(this.intentos);
+    }
   }
+  
 
   juegoTerminado(): boolean {
     return false; 
