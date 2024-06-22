@@ -14,7 +14,7 @@ export class PalabrasService {
   ];
 
   palabraActual: string = ''; 
-  palabraOculta: string[] = [];
+  palabraOculta: string[] = []; //es para mostrar las letras si se adivinan :D
   intentos: number = 6; 
 
   intentosCambio = new Subject<number>();
