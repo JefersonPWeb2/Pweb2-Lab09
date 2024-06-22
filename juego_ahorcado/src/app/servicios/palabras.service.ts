@@ -54,6 +54,6 @@ export class PalabrasService {
   
 
   juegoTerminado(): boolean {
-    return false; 
+    return this.intentos <= 0 || this.palabraOculta.join('') === this.palabraActual;
   }
 }
