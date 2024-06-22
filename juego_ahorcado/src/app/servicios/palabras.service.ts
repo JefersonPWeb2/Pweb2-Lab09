@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,8 @@ export class PalabrasService {
   palabraOculta: string[] = [];
   intentos: number = 6; 
 
+  intentosCambio = new Subject<number>();
+
   constructor() {
     this.nuevaPalabra();
   }
@@ -29,7 +32,10 @@ export class PalabrasService {
   }
 
   nuevaPalabra() {
-    this.palabraActual = this.getPalabraAleatoria(); 
+    this.palabraActual = this.palabras[Math.floor(Math.random() * this.palabras.length)];
+    this.palabraOculta = Array(this.palabraActual.length).fill('_');
+    this.intentos = 6;
+    this.intentosCambio.next(this.intentos);
   }
 
   adivinar(letra: string) {
