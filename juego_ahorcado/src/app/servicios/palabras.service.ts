@@ -10,10 +10,16 @@ export class PalabrasService {
     'paul',
     'joao',
     'esternocleidomastoideo',
-  ]
+  ];
+
   constructor() { }
   
   getPalabras(): string[] {
-    return this.palabras
+    return this.palabras;
+  }
+
+  getPalabraAleatoria(): string {
+    return this.palabras[Math.floor(Math.random() * this.palabras.length)];
   }
 }
+
