@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { GameBoardComponent } from './game/game-board/game-board.component';
+import { HangmanFigureComponent } from './game/hangman-figure/hangman-figure.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [GameBoardComponent, HangmanFigureComponent]
 })
 export class AppComponent {
-  title = 'juego_ahorcado';
+  title = 'Juego Ahorcado';
+  intentos: number = 9;
 }
