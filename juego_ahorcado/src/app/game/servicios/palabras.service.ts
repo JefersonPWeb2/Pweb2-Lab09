@@ -15,7 +15,7 @@ export class PalabrasService {
 
   palabraActual: string = ''; 
   palabraOculta: string[] = []; //es para mostrar las letras si se adivinan :D
-  intentos: number = 6; 
+  intentos: number = 9; 
 
   intentosCambio = new Subject<number>();
 
@@ -34,7 +34,7 @@ export class PalabrasService {
   nuevaPalabra() {
     this.palabraActual = this.palabras[Math.floor(Math.random() * this.palabras.length)];
     this.palabraOculta = Array(this.palabraActual.length).fill('_');
-    this.intentos = 6;
+    this.intentos = 9;
     this.intentosCambio.next(this.intentos);
   }
 
