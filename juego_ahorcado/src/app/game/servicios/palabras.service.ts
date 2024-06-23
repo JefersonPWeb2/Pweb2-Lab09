@@ -14,10 +14,16 @@ export class PalabrasService {
     'aureo',
     'electroencefalografista',
     'anticonstitucionalidad',
-    'desoxirribonucleótido',
-    'ventrílocuo',
+    'desoxirribonucleotido',
+    'ventrilocuo',
     'otorrinolaringologo',
-    'paralelepipedo'
+    'paralelepipedo',
+    'contrarrevolucionario',
+    'interdisciplinariedad',
+    'caleidoscopio',
+    'supercalifragilisticoespialidoso',
+    'desproporcionadamente',
+    'incomprehensibilidad'
   ];
 
   palabraActual: string = ''; 
