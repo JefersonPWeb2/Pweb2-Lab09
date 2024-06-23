@@ -1,4 +1,105 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #7c1674 100%);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  min-height: 100vh;
+}
+
+.app-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   text-align: center;
-  margin-top: 50px;
+  padding: 30px;
+}
+
+.app-root h1 {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #ff00c8, #03ffee, #0084ff, #a200ff);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+  letter-spacing: 2px;
+  animation: gradient-animation 8s ease infinite, float 6s ease-in-out infinite;
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.app-root h1::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  opacity: 0.1;
+  filter: blur(8px);
+  z-index: -1;
+}
+.container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+app-game-board, app-hangman-figure {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+app-game-board:hover, app-hangman-figure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .app-root h1 {
+    font-size: 2.5rem;
+  }
+
+  app-game-board, app-hangman-figure {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-root h1 {
+    font-size: 2rem;
+  }
+
+  app-game-board, app-hangman-figure {
+    padding: 15px;
+  }
 }
