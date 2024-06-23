@@ -1,0 +1,18 @@
+.game-board {
+  text-align: center;
+}
+
+.word {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.keyboard button {
+  margin: 5px;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+.status {
+  margin-top: 20px;
+}
