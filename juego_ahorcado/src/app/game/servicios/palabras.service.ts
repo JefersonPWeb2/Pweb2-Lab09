@@ -11,6 +11,13 @@ export class PalabrasService {
     'paul',
     'joao',
     'esternocleidomastoideo',
+    'aureo',
+    'electroencefalografista',
+    'anticonstitucionalidad',
+    'desoxirribonucleótido',
+    'ventrílocuo',
+    'otorrinolaringologo',
+    'paralelepipedo'
   ];
 
   palabraActual: string = ''; 
