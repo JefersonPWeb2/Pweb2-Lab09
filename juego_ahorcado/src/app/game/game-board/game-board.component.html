@@ -1,1 +1,15 @@
-<p>game-board works!</p>
+<div class="game-board">
+  <div class="word">
+    <span *ngFor="let letter of palabrasService.palabraOculta">{{ letter }}</span>
+  </div>
+  <div class="keyboard">
+    <button *ngFor="let letter of alphabet" (click)="adivinar(letter)" [disabled]="letrasAdivinadas.has(letter)">
+      {{ letter }}
+    </button>
+  </div>
+  <div class="status">
+    <p>Intentos restantes: {{ palabrasService.intentos }}</p>
+    <p *ngIf="palabrasService.juegoTerminado()">{{ getEndMessage() }}</p>
+    <button *ngIf="palabrasService.juegoTerminado()" (click)="reiniciarJuego()">Reiniciar Juego</button>
+  </div>
+</div>
