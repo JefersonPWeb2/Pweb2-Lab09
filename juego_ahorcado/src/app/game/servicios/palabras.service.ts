@@ -21,7 +21,6 @@ export class PalabrasService {
     'contrarrevolucionario',
     'interdisciplinariedad',
     'caleidoscopio',
-    'supercalifragilisticoespialidoso',
     'desproporcionadamente',
     'incomprehensibilidad'
   ];
